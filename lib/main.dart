@@ -1,42 +1,77 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(app2());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class app2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Home_Children(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
+class Home_Child extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
+        title: Text('Latihan Child'),
       ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
+      body: Container(
+        child: Text('Text w/ child'),
+        color: Colors.black38,
+        padding: EdgeInsets.all(24.0),
+      ),
+    );
+  }
+}
+
+class Home_Children extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Latihan Children'),
+      ),
+      body: Column(
+        children: [
+          Container(
+            child: Text('text w/ children'),
+            color: Colors.red,
+            padding: EdgeInsets.all(16.0),
+          ),
+          Container(
+            child: Text('text w/ children'),
+            color: Colors.orange,
+            padding: EdgeInsets.all(16.0),
+          ),
+          Container(
+            child: Text('text w/ children'),
+            color: Colors.yellow,
+            padding: EdgeInsets.all(16.0),
+          ),
+          Container(
+            child: Text('text w/ children'),
+            color: Colors.green,
+            padding: EdgeInsets.all(16.0),
+          ),
+          Container(
+            child: Text('text w/ children'),
+            color: Colors.blue,
+            padding: EdgeInsets.all(16.0),
+          ),
+          Container(
+            child: Text('text w/ children'),
+            color: Colors.indigo,
+            padding: EdgeInsets.all(16.0),
+          ),
+          Container(
+            child: Text('text w/ children'),
+            color: Colors.purple,
+            padding: EdgeInsets.all(16.0),
+          ),
+        ],
       ),
     );
   }
