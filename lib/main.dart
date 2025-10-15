@@ -1,75 +1,101 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(app2());
+void main() => runApp(MyApp());
 
-class app2 extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home_Children(),
+      home: HomeChildren(),
     );
   }
 }
 
-class Home_Child extends StatelessWidget {
+class HomeChildren extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Latihan Child'),
-      ),
-      body: Container(
-        child: Text('Text w/ child'),
-        color: Colors.black38,
-        padding: EdgeInsets.all(24.0),
-      ),
-    );
-  }
-}
-
-class Home_Children extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Latihan Children'),
+        title: Text('Header'),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment
+            .stretch, // Supaya anak-anak Column bisa full width
         children: [
           Container(
-            child: Text('text w/ children'),
-            color: Colors.red,
-            padding: EdgeInsets.all(16.0),
-          ),
-          Container(
-            child: Text('text w/ children'),
-            color: Colors.orange,
-            padding: EdgeInsets.all(16.0),
-          ),
-          Container(
-            child: Text('text w/ children'),
-            color: Colors.yellow,
-            padding: EdgeInsets.all(16.0),
-          ),
-          Container(
-            child: Text('text w/ children'),
-            color: Colors.green,
-            padding: EdgeInsets.all(16.0),
-          ),
-          Container(
-            child: Text('text w/ children'),
             color: Colors.blue,
-            padding: EdgeInsets.all(16.0),
+            alignment: Alignment.center,
+            padding: EdgeInsets.all(10.0),
+            child: Text('Header'),
           ),
           Container(
-            child: Text('text w/ children'),
-            color: Colors.indigo,
-            padding: EdgeInsets.all(16.0),
+            color: Colors.black38,
+            alignment: Alignment.center,
+            padding: EdgeInsets.all(40.0),
+            child: Text('Hero'),
           ),
-          Container(
-            child: Text('text w/ children'),
-            color: Colors.purple,
-            padding: EdgeInsets.all(16.0),
+          Expanded(
+            // Menjadikan Row ini fleksibel mengisi sisa ruang
+            child: Row(
+              crossAxisAlignment:
+                  CrossAxisAlignment.stretch, // Untuk full height
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    color: Colors.red,
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(10.0),
+                    child: Text('Menu'),
+                  ),
+                ),
+                Expanded(
+                  flex: 3,
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Container(
+                          color: Colors.red[300],
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          child: Text('Main'),
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          color: Colors.red[400],
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.all(10.0),
+                          child: Text('Main'),
+                        ),
+                      ),
+                      Expanded(
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Container(
+                                color: Colors.red[500],
+                                alignment: Alignment.center,
+                                padding: EdgeInsets.all(10.0),
+                                child: Text('Main'),
+                              ),
+                            ),
+                            Expanded(
+                              child: Container(
+                                color: Colors.red[600],
+                                alignment: Alignment.center,
+                                padding: EdgeInsets.all(10.0),
+                                child: Text('Main'),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
