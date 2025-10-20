@@ -1,101 +1,151 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
-void main() => runApp(MyApp());
+void main() {
+  runApp(Latihan_2());
+}
 
-class MyApp extends StatelessWidget {
+class Latihan_2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomeChildren(),
+      title: 'Latihan 2',
+      home: Home_Quiz(),
     );
   }
 }
 
-class HomeChildren extends StatelessWidget {
+class Home_Child extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Header'),
+        title: Text('Latihan Child'),
+      ),
+      body: Container(
+        child: Text('Text dengan Child'),
+        color: Colors.green,
+        padding: EdgeInsets.all(16.0),
+      ),
+    );
+  }
+}
+
+class Home_Children extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Latihan Children'),
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment
-            .stretch, // Supaya anak-anak Column bisa full width
+        children: [
+          Row(
+            children: [
+              Container(
+                child: Text('Text Chaild1a'),
+                color: Colors.yellow,
+                padding: EdgeInsets.all(16.0),
+              ),
+              Container(
+                child: Text('Text Chaild1b'),
+                color: Color(0xff0004db),
+                padding: EdgeInsets.all(16.0),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            child: Text('Text dengan Children, Chaild2'),
+            color: Colors.green,
+            padding: EdgeInsets.all(16.0),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            child: Text('Text dengan Children, Chaild3'),
+            color: Colors.red,
+            padding: EdgeInsets.all(16.0),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Container(
+            child: Text('Text dengan Children, Chaild1'),
+            color: Colors.amber,
+            padding: EdgeInsets.all(16.0),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class Home_Quiz extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Latihan Children'),
+      ),
+      body: Column(
         children: [
           Container(
-            color: Colors.blue,
-            alignment: Alignment.center,
-            padding: EdgeInsets.all(10.0),
-            child: Text('Header'),
+            child: Text('HEADER'),
+            color: Colors.green,
+            padding: EdgeInsets.all(16.0),
+            width: MediaQuery.of(context).size.width * 1,
           ),
           Container(
-            color: Colors.black38,
-            alignment: Alignment.center,
-            padding: EdgeInsets.all(40.0),
-            child: Text('Hero'),
+            child: Text('HERO'),
+            color: Colors.red,
+            padding: EdgeInsets.all(16.0),
+            width: MediaQuery.of(context).size.width * 1,
           ),
-          Expanded(
-            // Menjadikan Row ini fleksibel mengisi sisa ruang
-            child: Row(
-              crossAxisAlignment:
-                  CrossAxisAlignment.stretch, // Untuk full height
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    color: Colors.red,
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.all(10.0),
-                    child: Text('Menu'),
+          Row(
+            children: [
+              Container(
+                child: Text('MENU'),
+                color: Color(0xff006b30),
+                padding: EdgeInsets.all(16.0),
+                height: MediaQuery.of(context).size.height * 0.73,
+              ),
+              Column(
+                children: [
+                  Container(
+                    child: Text('MAIN'),
+                    color: Color(0xff0074b9),
+                    padding: EdgeInsets.all(16.0),
+                    width: MediaQuery.of(context).size.width * 0.79,
+                    height: MediaQuery.of(context).size.height * 0.57,
                   ),
-                ),
-                Expanded(
-                  flex: 3,
-                  child: Column(
+                  Container(
+                    child: Text('BANNER'),
+                    color: Colors.yellow,
+                    padding: EdgeInsets.all(16.0),
+                    width: MediaQuery.of(context).size.width * 0.79,
+                  ),
+                  Row(
                     children: [
-                      Expanded(
-                        child: Container(
-                          color: Colors.red[300],
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.all(10.0),
-                          child: Text('Main'),
-                        ),
+                      Container(
+                        child: Text('EXTRA'),
+                        color: Color(0xffffbea4),
+                        padding: EdgeInsets.all(16.0),
+                        width: MediaQuery.of(context).size.width * 0.39,
                       ),
-                      Expanded(
-                        child: Container(
-                          color: Colors.red[400],
-                          alignment: Alignment.center,
-                          padding: EdgeInsets.all(10.0),
-                          child: Text('Main'),
-                        ),
-                      ),
-                      Expanded(
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: Container(
-                                color: Colors.red[500],
-                                alignment: Alignment.center,
-                                padding: EdgeInsets.all(10.0),
-                                child: Text('Main'),
-                              ),
-                            ),
-                            Expanded(
-                              child: Container(
-                                color: Colors.red[600],
-                                alignment: Alignment.center,
-                                padding: EdgeInsets.all(10.0),
-                                child: Text('Main'),
-                              ),
-                            ),
-                          ],
-                        ),
+                      Container(
+                        child: Text('IMAGE'),
+                        color: Color(0xffff8bf0),
+                        padding: EdgeInsets.all(16.0),
+                        width: MediaQuery.of(context).size.width * 0.4,
                       ),
                     ],
                   ),
-                ),
-              ],
-            ),
+                ],
+              ),
+            ],
           ),
         ],
       ),
