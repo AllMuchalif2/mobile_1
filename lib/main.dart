@@ -1,15 +1,13 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
-void main() {
-  runApp(Latihan_2());
-}
+void main() => runApp(MyApp());
 
-class Latihan_2 extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Latihan 2',
-      home: Home_Quiz(),
+      debugShowCheckedModeBanner: false,
+      home: TextWidget(),
     );
   }
 }
@@ -22,9 +20,9 @@ class Home_Child extends StatelessWidget {
         title: Text('Latihan Child'),
       ),
       body: Container(
-        child: Text('Text dengan Child'),
-        color: Colors.green,
-        padding: EdgeInsets.all(16.0),
+        child: Text('Text w/ child'),
+        color: Colors.black38,
+        padding: EdgeInsets.all(24.0),
       ),
     );
   }
@@ -39,33 +37,8 @@ class Home_Children extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Row(
-            children: [
-              Container(
-                child: Text('Text Chaild1a'),
-                color: Colors.yellow,
-                padding: EdgeInsets.all(16.0),
-              ),
-              Container(
-                child: Text('Text Chaild1b'),
-                color: Color(0xff0004db),
-                padding: EdgeInsets.all(16.0),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 10,
-          ),
           Container(
-            child: Text('Text dengan Children, Chaild2'),
-            color: Colors.green,
-            padding: EdgeInsets.all(16.0),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            child: Text('Text dengan Children, Chaild3'),
+            child: Text('text w/ children'),
             color: Colors.red,
             padding: EdgeInsets.all(16.0),
           ),
@@ -73,8 +46,33 @@ class Home_Children extends StatelessWidget {
             height: 10,
           ),
           Container(
-            child: Text('Text dengan Children, Chaild1'),
-            color: Colors.amber,
+            child: Text('text w/ children'),
+            color: Colors.orange,
+            padding: EdgeInsets.all(16.0),
+          ),
+          Container(
+            child: Text('text w/ children'),
+            color: Colors.yellow,
+            padding: EdgeInsets.all(16.0),
+          ),
+          Container(
+            child: Text('text w/ children'),
+            color: Colors.green,
+            padding: EdgeInsets.all(16.0),
+          ),
+          Container(
+            child: Text('text w/ children'),
+            color: Colors.blue,
+            padding: EdgeInsets.all(16.0),
+          ),
+          Container(
+            child: Text('text w/ children'),
+            color: Colors.indigo,
+            padding: EdgeInsets.all(16.0),
+          ),
+          Container(
+            child: Text('text w/ children'),
+            color: Colors.purple,
             padding: EdgeInsets.all(16.0),
           ),
         ],
@@ -83,7 +81,7 @@ class Home_Children extends StatelessWidget {
   }
 }
 
-class Home_Quiz extends StatelessWidget {
+class HomeChildren extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,7 +106,7 @@ class Home_Quiz extends StatelessWidget {
             children: [
               Container(
                 child: Text('MENU'),
-                color: Color(0xff006b30),
+                color: Colors.green,
                 padding: EdgeInsets.all(16.0),
                 height: MediaQuery.of(context).size.height * 0.73,
               ),
@@ -116,14 +114,14 @@ class Home_Quiz extends StatelessWidget {
                 children: [
                   Container(
                     child: Text('MAIN'),
-                    color: Color(0xff0074b9),
+                    color: Colors.blue,
                     padding: EdgeInsets.all(16.0),
                     width: MediaQuery.of(context).size.width * 0.79,
                     height: MediaQuery.of(context).size.height * 0.57,
                   ),
                   Container(
                     child: Text('BANNER'),
-                    color: Colors.yellow,
+                    color: Colors.red,
                     padding: EdgeInsets.all(16.0),
                     width: MediaQuery.of(context).size.width * 0.79,
                   ),
@@ -131,13 +129,13 @@ class Home_Quiz extends StatelessWidget {
                     children: [
                       Container(
                         child: Text('EXTRA'),
-                        color: Color(0xffffbea4),
+                        color: Colors.blue,
                         padding: EdgeInsets.all(16.0),
                         width: MediaQuery.of(context).size.width * 0.39,
                       ),
                       Container(
                         child: Text('IMAGE'),
-                        color: Color(0xffff8bf0),
+                        color: Colors.green,
                         padding: EdgeInsets.all(16.0),
                         width: MediaQuery.of(context).size.width * 0.4,
                       ),
@@ -150,5 +148,129 @@ class Home_Quiz extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+class TextWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          title: Text(
+            'Latihan Text Widget',
+          ),
+        ),
+        body: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: Text(
+                'Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor sit amet consectetur adipiscing elit quisque faucibus.',
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                  backgroundColor: Colors.black12,
+                  decoration: TextDecoration.underline,
+                ),
+              ),
+            ),
+            SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  children: [
+                    TextFormField(
+                      decoration: InputDecoration(
+                        border: UnderlineInputBorder(),
+                        filled: true,
+                        prefixIcon: Icon(
+                          Icons.person,
+                          color: Colors.blue,
+                        ),
+                        hintText: 'Masukkan Nama Anda',
+                        labelText: 'Nama *',
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        border: UnderlineInputBorder(),
+                        filled: true,
+                        prefixText: '+62 ',
+                        hintText: 'Masukkan Nomer Anda',
+                        labelText: 'Nomer *',
+                        suffixIcon: Icon(
+                          Icons.phone_android,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      keyboardType: TextInputType.phone,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        border: UnderlineInputBorder(),
+                        filled: true,
+                        icon: Icon(Icons.email),
+                        hintText: 'Masukkan Email Anda',
+                        labelText: 'Email *',
+                      ),
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        border: UnderlineInputBorder(),
+                        hintText: 'Masukkan Deskripsi Anda',
+                        labelText: 'Deskripsi *',
+                      ),
+                      maxLines: 3,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        border: UnderlineInputBorder(),
+                        labelText: 'Gaji *',
+                        prefixText: '\Rp.',
+                        suffixText: 'Rupiah',
+                        suffixStyle: TextStyle(color: Colors.blue),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    TextFormField(
+                      decoration: InputDecoration(
+                        border: UnderlineInputBorder(),
+                        labelText: 'Password *',
+                        filled: true,
+                        suffixIcon: Icon(Icons.visibility_outlined),
+                      ),
+                      maxLength: 8,
+                      obscureText: true,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ));
   }
 }
